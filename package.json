@@ -1,0 +1,38 @@
+{
+  "name": "vue-svg-sprite",
+  "version": "0.0.1",
+  "description": "Vue.js directive to simply use SVG sprite",
+  "main": "./index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "jscs src && eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thierrymichel/vue-svg-sprite.git"
+  },
+  "keywords": [
+    "vue",
+    "directive",
+    "svg",
+    "use",
+    "sprite"
+  ],
+  "author": "thierrymichel <thmichel@gmail.com> (http://thierrymichel.net)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thierrymichel/vue-svg-sprite/issues"
+  },
+  "homepage": "https://github.com/thierrymichel/vue-svg-sprite#readme",
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-eslint": "^6.0.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "eslint": "^2.13.0",
+    "jscs": "^3.0.4"
+  },
+  "dependencies": {}
+}
