@@ -1,5 +1,7 @@
 # vue-svg-sprite
 
+![experimental](https://img.shields.io/badge/stability-experimental-red.svg?style=flat-square) [![NPM version](https://img.shields.io/npm/v/vue-svg-sprite.svg?style=flat-square)](https://www.npmjs.com/package/vue-svg-sprite)
+
 > Vue.js directive to simply use SVG sprite
 
 
@@ -66,6 +68,8 @@ output:
 > To generate the SVG sprite file, you can use [gulp-svgstore](https://github.com/w0rm/gulp-svgstore) or [grunt-svgstore](https://github.com/FWeinb/grunt-svgstore).
 
 -----
+
+[![NPM](https://nodei.co/npm/vue-svg-sprite.png)](https://www.npmjs.com/package/vue-svg-sprite)
 
 ## License
 
