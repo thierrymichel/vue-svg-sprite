@@ -38,13 +38,15 @@ export default {
           }
         }
 
-        // Check for existing class option
+        // Check for existing class option (also .className--modifier)
         let isClassExisting = false;
-        el.classList.forEach(function(className) {
-          if (className.indexOf(opts.class) !== -1) {
+
+        for (let i = 0; i < el.classList.length; i++) {
+          if (el.classList.item(i).indexOf(opts.class) !== -1) {
             isClassExisting = true;
           }
-        });
+        }
+
         if (!isClassExisting) {
           el.classList.add(opts.class);
         }
