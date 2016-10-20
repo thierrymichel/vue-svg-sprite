@@ -3,7 +3,7 @@ export default {
 
     const dir = {
       params: ['symbol', 'size'],
-      bind() {
+      bind(el, binding, vnode, oldVnode) {
 
         // Get options
         opts.class = opts.class || 'icon';
@@ -11,11 +11,10 @@ export default {
 
         // Get params
         // If expression + "symbol" param -> use expression
-        let id = this.expression || this.params.symbol;
-        let size = this.params.size;
+        let id = vnode.data.attrs.expression || vnode.data.attrs.symbol;
+        let size = vnode.data.attrs.size;
 
         // Get element
-        let el = this.el;
         // Set viewBox, widht, height attributes ?
         if (size) {
           // Normalize valid separators: / /, /,/
