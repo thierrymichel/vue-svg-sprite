@@ -4,6 +4,7 @@
 
 > Vue.js directive to simply use SVG sprite
 
+This version (1.0.1) is compatible with Vue.js 2.0
 
 ## Draft (wip)
 
