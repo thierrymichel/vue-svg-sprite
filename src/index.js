@@ -3,15 +3,15 @@ export default {
   install(Vue, opts = {}) {
     const dir = {
       params: ['symbol', 'size'],
-      bind(el) {
+      bind(el, binding, vnode) {
         // Get options
         opts.class = opts.class || 'icon';
         opts.url = opts.url || '/assets/svg/sprite.svg';
 
         // Get params
         // If expression + "symbol" param -> use expression
-        const id = this.expression || this.params.symbol;
-        let { size } = this.params;
+        const id = vnode.data.attrs.expression || vnode.data.attrs.symbol;
+        let { size } = vnode.data.attrs.size;
 
         // Set viewBox, widht, height attributes ?
         if (size) {
