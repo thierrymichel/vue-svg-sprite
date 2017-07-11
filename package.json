@@ -1,6 +1,6 @@
 {
   "name": "vue-svg-sprite",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Vue.js directive to simply use SVG sprite",
   "main": "./index.js",
   "scripts": {
