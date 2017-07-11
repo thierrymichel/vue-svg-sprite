@@ -27,10 +27,10 @@
   },
   "homepage": "https://github.com/thierrymichel/vue-svg-sprite#readme",
   "devDependencies": {
-    "babel-cli": "^6.10.1",
-    "babel-eslint": "^6.0.4",
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
-    "eslint": "^2.13.0"
+    "eslint": "^4.2.0"
   },
   "dependencies": {}
 }
