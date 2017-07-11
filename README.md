@@ -4,7 +4,7 @@
 
 > Vue.js directive to simply use SVG sprite
 
-This version (1.0.1) is compatible with Vue.js 2.0
+This version (1.0.1) is compatible with Vue.js 2.0 (thanks to [@lovethebomb](https://github.com/lovethebomb))
 
 ## Draft (wip)
 
@@ -71,6 +71,10 @@ output:
 -----
 
 [![NPM](https://nodei.co/npm/vue-svg-sprite.png)](https://www.npmjs.com/package/vue-svg-sprite)
+
+## Contributors
+
+[@lovethebomb](https://github.com/lovethebomb)
 
 ## License
 
