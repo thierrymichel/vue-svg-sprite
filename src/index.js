@@ -10,8 +10,8 @@ export default {
 
         // Get params
         // If expression + "symbol" param -> use expression
-        const id = vnode.data.attrs.expression || vnode.data.attrs.symbol;
-        let { size } = vnode.data.attrs.size;
+        const id = binding.expression || vnode.data.attrs.symbol;
+        let { size } = vnode.data.attrs;
 
         // Set viewBox, widht, height attributes ?
         if (size) {
