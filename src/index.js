@@ -2,11 +2,10 @@
 export default {
   install(Vue, opts = {}) {
     const dir = {
-      params: ['symbol', 'size'],
       bind(el, binding, vnode) {
         // Get options
         opts.class = opts.class || 'icon';
-        opts.url = opts.url || '/assets/svg/sprite.svg';
+        opts.url = opts.url === undefined ? '/assets/svg/sprite.svg' : opts.url;
 
         // Get params
         // If expression + "symbol" param -> use expression
