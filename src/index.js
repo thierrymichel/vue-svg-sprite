@@ -38,16 +38,15 @@ export default {
         }
 
         // Check for existing class option (also .className--modifier)
-        let isClassExisting = false;
+        // IE do not support classList on SVG element, so we use getAttribute…
+        const classes = el.getAttribute('class');
 
-        for (let i = 0; i < el.classList.length; i++) {
-          if (el.classList.item(i).indexOf(opts.class) !== -1) {
-            isClassExisting = true;
+        if (classes) {
+          const hasClass = classes.split(' ').some((className) => className.indexOf(opts.class) !== -1);
+
+          if (!hasClass) {
+            el.setAttribute('class', `${classes} ${opts.class}`);
           }
-        }
-
-        if (!isClassExisting) {
-          el.classList.add(opts.class);
         }
 
         // Add the <use> element to <svg>
