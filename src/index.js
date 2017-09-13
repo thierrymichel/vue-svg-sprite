@@ -33,6 +33,9 @@ export default {
             el.setAttribute('viewBox', viewBox.join(' '));
             el.setAttribute('width', w);
             el.setAttribute('height', h);
+            // Remove directive attributes
+            el.removeAttribute('size');
+            el.removeAttribute('symbol');
           }
         }
 
