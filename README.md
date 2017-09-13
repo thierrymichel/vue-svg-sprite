@@ -1,6 +1,6 @@
 # vue-svg-sprite
 
-![experimental](https://img.shields.io/badge/stability-experimental-red.svg?style=flat-square) [![NPM version](https://img.shields.io/npm/v/vue-svg-sprite.svg?style=flat-square)](https://www.npmjs.com/package/vue-svg-sprite)
+![experimental](https://img.shields.io/badge/stability-stable-green.svg?style=flat-square) [![NPM version](https://img.shields.io/npm/v/vue-svg-sprite.svg?style=flat-square)](https://www.npmjs.com/package/vue-svg-sprite)
 
 > Vue.js directive to simply use SVG sprite
 
@@ -44,6 +44,7 @@ Vue.use(SvgSprite);
 ></svg>
 ```
 
+> you can use an expression rather than the `symbol` (`<svg v-svg="'icons-dashboard'"></svg>`).
 > `size` attributes gives the same output with `"24"`, `"24 24"` or `"0 0 24 24"`.
 
 output:
@@ -67,6 +68,8 @@ Vue.use(SvgSprite, {
   class: 'my-class',
 });
 ```
+
+> If you want to use an inline SVG, set `url` option to `''`.
 
 -----
 

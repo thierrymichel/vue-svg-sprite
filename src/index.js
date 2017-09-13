@@ -40,17 +40,16 @@ export default {
         // Check for existing class option (also .className--modifier)
         // IE do not support classList on SVG element, so we use getAttribute…
         const classes = el.getAttribute('class');
+        const hasClass = classes ?
+          classes.split(' ').some((className) => className.indexOf(opts.class) !== -1) :
+          false;
 
-        if (classes) {
-          const hasClass = classes.split(' ').some((className) => className.indexOf(opts.class) !== -1);
-
-          if (!hasClass) {
-            el.setAttribute('class', `${classes} ${opts.class}`);
-          }
+        if (!hasClass) {
+          el.setAttribute('class', classes ? `${classes} ${opts.class}` : opts.class);
         }
 
         // Add the <use> element to <svg>
-        const href = `${opts.url}#${id}`;
+        const href = opts.url === '' ? `#${id}` : `${opts.url}#${id}`;
         const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 
         use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
