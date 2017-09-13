@@ -30,38 +30,42 @@ NB: If the className is already used (eg: via a modifier like `icon--inline`), t
 import Vue from 'vue';
 import SvgSprite from 'vue-svg-sprite';
 
-Vue.use(SvgSprite, {
-  url: '/path/to/svg-sprite-file.svg',
-  class: 'icon'
-});
+Vue.use(SvgSprite);
 ```
 
-## Basic usage
+## Usage
 
 ```html
-<svg v-svg="icons-dashboard"></svg>
+<svg v-svg
+     symbol="icons-dashboard"
+     size="0 0 24 24"
+     role="presentation"
+     class="icon--inline"
+></svg>
 ```
+
+> `size` attributes gives the same output with `"24"`, `"24 24"` or `"0 0 24 24"`.
 
 output:
 
 ```html
-<svg class="icon">
+<svg viewBox="0 0 24 24" width="24" height="24" role="presentation" class="icon--inline">
   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/sprite.svg#icons-dashboard"></use>
 </svg>
 ```
 
-## Advanced usage
+## Options
 
-```html
-<svg role="presentation" class="icon--inline" v-svg symbol="icons-dashboard" size="0 0 24 24"></svg>
-```
+| Option | Values | Default | Description |
+| --- | --- | --- | --- |
+| url | String | '/assets/svg/sprite.svg' | path to external SVG file |
+| class | String | 'icon' | CSS class name |
 
-output:
-
-```html
-<svg role="presentation" class="icon--inline" viewBox="0 0 24 24" width="24" height="24">
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/sprite.svg#icons-companies"></use>
-</svg>
+```js
+Vue.use(SvgSprite, {
+  url: 'path/to/svg/file.svg',
+  class: 'my-class',
+});
 ```
 
 -----
