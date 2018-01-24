@@ -2,6 +2,9 @@
 export default {
   install(Vue, opts = {}) {
     const dir = {
+      update (el, binding, vnode) {
+        dir.bind(el, binding, vnode);
+      },
       bind(el, binding, vnode) {
         // Get options
         opts.class = opts.class || 'icon';
@@ -55,7 +58,11 @@ export default {
         const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 
         use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
-        el.appendChild(use);
+        if (el.children.length) {
+          el.replaceChild(use, el.children[0]);
+        } else {
+          el.appendChild(use);
+        }
       },
     };
 
