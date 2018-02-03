@@ -5,7 +5,7 @@
   "main": "./index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
-    "coverage": "jest --coverage",
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "prepublish": "npm run build",
     "test": "npm run lint && jest --coverage",
     "test:watch": "jest --watch",
@@ -32,6 +32,7 @@
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
+    "coveralls": "^3.0.0",
     "eslint": "^4.2.0",
     "jest": "^22.1.4",
     "vue": "^2.5.13"
