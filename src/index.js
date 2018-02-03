@@ -57,9 +57,9 @@ export default {
         use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
         el.appendChild(use);
       },
-      update(el, binding) {
+      update(el, binding, vnode) {
         // NOTE: guess it's only when expression is used…
-        const id = binding.value;
+        const id = binding.value || vnode.data.attrs.symbol;
         const href = opts.url === '' ? `#${id}` : `${opts.url}#${id}`;
         const newUse = use.cloneNode();
 

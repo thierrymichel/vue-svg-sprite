@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 > No changelog before 1.2.0 release… ¯\_(ツ)_/¯
 
+## [1.2.1] _(03/02/2018)_
+
+### Fixed
+
+- :ok_hand: fix update with binded symbol attribute
+
 ## [1.2.0] _(03/02/2018)_
 
 ### Added

@@ -180,10 +180,27 @@ test('keep other attributes', () => {
   expect(role).toBe('presentation');
 });
 
-test('update use href', () => {
+test('update use href with expression', () => {
   const vm = new Vue({
     template: `<div>
       <svg v-svg="icon"></svg>
+    </div>`,
+    data: { icon: 'icon1' },
+  }).$mount();
+
+  // Change state and wait for one tick until checking
+  vm.icon = 'icon2';
+  Vue.nextTick(() => {
+    const href = vm.$el.querySelector('use').getAttribute('xlink:href');
+
+    expect(href).toBe('/assets/svg/sprite.svg#icon2');
+  });
+});
+
+test('update use href with symbol', () => {
+  const vm = new Vue({
+    template: `<div>
+      <svg v-svg :symbol="icon"></svg>
     </div>`,
     data: { icon: 'icon1' },
   }).$mount();
