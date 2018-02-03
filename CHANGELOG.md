@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 > No changelog before 1.2.0 release… ¯\_(ツ)_/¯
 
+## [1.2.2] _(03/02/2018)_
+
+### Fixed
+
+- :bug: :ok_hand: fix multiple instances
+
 ## [1.2.1] _(03/02/2018)_
 
 ### Fixed

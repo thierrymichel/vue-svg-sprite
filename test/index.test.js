@@ -180,6 +180,21 @@ test('keep other attributes', () => {
   expect(role).toBe('presentation');
 });
 
+test('multiple instances', () => {
+  const vm = new Vue({
+    template: `<div>
+      <svg v-svg symbol="icon1"></svg>
+      <svg v-svg symbol="icon2"></svg>
+    </div>`,
+  }).$mount();
+
+  const href1 = vm.$el.querySelectorAll('use')[0].getAttribute('xlink:href');
+  const href2 = vm.$el.querySelectorAll('use')[1].getAttribute('xlink:href');
+
+  expect(href1).toBe('/assets/svg/sprite.svg#icon1');
+  expect(href2).toBe('/assets/svg/sprite.svg#icon2');
+});
+
 test('update use href with expression', () => {
   const vm = new Vue({
     template: `<div>

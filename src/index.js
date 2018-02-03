@@ -53,18 +53,19 @@ export default {
 
         // Add the <use> element to <svg>
         const href = opts.url === '' ? `#${id}` : `${opts.url}#${id}`;
+        const useEl = use.cloneNode();
 
-        use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
-        el.appendChild(use);
+        useEl.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
+        el.appendChild(useEl);
       },
       update(el, binding, vnode) {
         // NOTE: guess it's only when expression is used…
         const id = binding.value || vnode.data.attrs.symbol;
         const href = opts.url === '' ? `#${id}` : `${opts.url}#${id}`;
-        const newUse = use.cloneNode();
+        const useEl = use.cloneNode();
 
-        newUse.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
-        el.replaceChild(newUse, el.children[0]);
+        useEl.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
+        el.replaceChild(useEl, el.children[0]);
       },
     };
 
