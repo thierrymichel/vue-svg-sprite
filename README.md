@@ -1,10 +1,12 @@
 # vue-svg-sprite
 
-![experimental](https://img.shields.io/badge/stability-stable-green.svg?style=flat-square) [![NPM version](https://img.shields.io/npm/v/vue-svg-sprite.svg?style=flat-square)](https://www.npmjs.com/package/vue-svg-sprite)
+![stable](https://img.shields.io/badge/stability-stable-green.svg?style=flat-square)
+[![NPM version](https://img.shields.io/npm/v/vue-svg-sprite.svg?style=flat-square)](https://www.npmjs.com/package/vue-svg-sprite)
+[![Coverage Status](https://img.shields.io/coveralls/thierrymichel/vue-svg-sprite/master.svg?style=flat-square)](https://coveralls.io/github/thierrymichel/vue-svg-sprite?branch=master)
 
 > Vue.js directive to simply use SVG sprite
 
-This version (1.0.1) is compatible with Vue.js 2.0 (thanks to [@lovethebomb](https://github.com/lovethebomb))
+This version (1.x.x) is compatible with Vue.js 2.0 (thanks to [@lovethebomb](https://github.com/lovethebomb))
 
 ## Draft (wip)
 
@@ -82,6 +84,7 @@ Vue.use(SvgSprite, {
 ## Contributors
 
 [@lovethebomb](https://github.com/lovethebomb)
+[@eregnier](https://github.com/eregnier)
 
 ## License
 

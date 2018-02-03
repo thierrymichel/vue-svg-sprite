@@ -1,2 +1,7 @@
 ### Custom ###
 /src
+/test
+/.babelrc
+/.editorconfig
+/.eslintrc.json
+/.travis.yml

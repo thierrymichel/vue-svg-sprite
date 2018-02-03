@@ -5,8 +5,10 @@
   "main": "./index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
+    "coverage": "jest --coverage",
     "prepublish": "npm run build",
-    "test": "npm run lint",
+    "test": "npm run lint && jest --coverage",
+    "test:watch": "jest --watch",
     "lint": "eslint src"
   },
   "repository": {
@@ -30,7 +32,9 @@
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.0",
-    "eslint": "^4.2.0"
+    "eslint": "^4.2.0",
+    "jest": "^22.1.4",
+    "vue": "^2.5.13"
   },
   "dependencies": {}
 }

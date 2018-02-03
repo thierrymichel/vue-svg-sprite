@@ -1,6 +1,7 @@
 /* eslint-disable no-magic-numbers */
 export default {
   install(Vue, opts = {}) {
+    const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
     const dir = {
       bind(el, binding, vnode) {
         // Get options
@@ -8,9 +9,9 @@ export default {
         opts.url = opts.url === undefined ? '/assets/svg/sprite.svg' : opts.url;
 
         // Get params
-        // If expression + "symbol" param -> use expression
-        const id = binding.expression || vnode.data.attrs.symbol;
-        let { size } = vnode.data.attrs;
+        // If expression + "symbol" param -> use expression value
+        const id = binding.value || vnode.data.attrs.symbol;
+        let size = vnode.data.attrs && vnode.data.attrs.size;
 
         // Set viewBox, widht, height attributes ?
         if (size) {
@@ -21,7 +22,7 @@ export default {
           const viewBox = [];
 
           if (l === 3 || l > 4) {
-            console.warn('[vue-svg-sprite] size: ', size, ' is not valid');
+            console.warn(`[vue-svg-sprite] size: "${size}" is not valid`);
           } else {
             viewBox[0] = l < 4 ? 0 : sizeValues[0];
             viewBox[1] = l < 4 ? 0 : sizeValues[1];
@@ -52,10 +53,18 @@ export default {
 
         // Add the <use> element to <svg>
         const href = opts.url === '' ? `#${id}` : `${opts.url}#${id}`;
-        const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 
         use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
         el.appendChild(use);
+      },
+      update(el, binding) {
+        // NOTE: guess it's only when expression is used…
+        const id = binding.value;
+        const href = opts.url === '' ? `#${id}` : `${opts.url}#${id}`;
+        const newUse = use.cloneNode();
+
+        newUse.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
+        el.replaceChild(newUse, el.children[0]);
       },
     };
 
