@@ -3,6 +3,9 @@ export default {
   install(Vue, opts = {}) {
     const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
     const dir = {
+      update (el, binding, vnode) {
+        dir.bind(el, binding, vnode);
+      },
       bind(el, binding, vnode) {
         // Get options
         opts.class = opts.class || 'icon';
@@ -55,7 +58,11 @@ export default {
         const href = opts.url === '' ? `#${id}` : `${opts.url}#${id}`;
 
         use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
-        el.appendChild(use);
+        if (el.children.length) {
+          el.replaceChild(use, el.children[0]);
+        } else {
+          el.appendChild(use);
+        }
       },
       update(el, binding) {
         // NOTE: guess it's only when expression is used…
