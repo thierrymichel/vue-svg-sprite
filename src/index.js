@@ -65,7 +65,7 @@ export default {
         const useEl = use.cloneNode();
 
         useEl.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
-        el.replaceChild(useEl, el.children[0]);
+        el.replaceChild(useEl, el.childNodes[0]);
       },
     };
 
