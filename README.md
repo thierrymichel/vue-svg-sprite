@@ -35,6 +35,14 @@ import SvgSprite from 'vue-svg-sprite';
 Vue.use(SvgSprite);
 ```
 
+### Nuxt
+If you are using this plugin with [Nuxt](https://nuxtjs.org/) make sure you import as a plugin without SSR since `document.createElementNS` does not exist.
+```js
+plugins: [ 
+  { src: '~/plugins/svg-sprite.js', ssr: false }
+]
+```
+
 ## Usage
 
 ```html
