@@ -89,7 +89,7 @@ Vue.use(SvgSprite, {
 
 -----
 
-[![NPM](https://nodei.co/npm/vue-svg-sprite.png)](https://www.npmjs.com/package/vue-svg-sprite)
+[![NPM](https://nodei.co/npm/vue-svg-sprite.png)](https://www.npmjs.com/package/vue-svg-sprite) [![Greenkeeper badge](https://badges.greenkeeper.io/thierrymichel/vue-svg-sprite.svg)](https://greenkeeper.io/)
 
 ## Contributors
 
