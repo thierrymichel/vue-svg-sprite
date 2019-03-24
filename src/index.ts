@@ -1,8 +1,15 @@
+import _Vue, { DirectiveOptions } from 'vue';
+
+interface ISvgSpriteOptions {
+  class?: string;
+  url?: string;
+}
+
 /* eslint-disable no-magic-numbers */
 export default {
-  install(Vue, opts = {}) {
+  install(vue: typeof _Vue, opts: ISvgSpriteOptions = {}) {
     const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-    const dir = {
+    const dir: DirectiveOptions = {
       bind(el, binding, vnode) {
         // Get options
         opts.class = opts.class || 'icon';
@@ -10,8 +17,8 @@ export default {
 
         // Get params
         // If expression + "symbol" param -> use expression value
-        const id = binding.value || vnode.data.attrs.symbol;
-        let size = vnode.data.attrs && vnode.data.attrs.size;
+        const id: string = binding.value || vnode.data.attrs.symbol;
+        let size: string = vnode.data.attrs && vnode.data.attrs.size;
 
         // Set viewBox, widht, height attributes ?
         if (size) {
@@ -44,7 +51,7 @@ export default {
         // IE do not support classList on SVG element, so we use getAttribute…
         const classes = el.getAttribute('class');
         const hasClass = classes ?
-          classes.split(' ').some((className) => className.indexOf(opts.class) !== -1) :
+          classes.split(' ').some(className => className.indexOf(opts.class) !== -1) :
           false;
 
         if (!hasClass) {
@@ -53,22 +60,24 @@ export default {
 
         // Add the <use> element to <svg>
         const href = opts.url === '' ? `#${id}` : `${opts.url}#${id}`;
-        const useEl = use.cloneNode();
+        const useEl = use.cloneNode() as SVGUseElement;
 
         useEl.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
+        useEl.setAttribute('href', href);
         el.appendChild(useEl);
       },
       update(el, binding, vnode) {
         // NOTE: guess it's only when expression is used…
         const id = binding.value || vnode.data.attrs.symbol;
         const href = opts.url === '' ? `#${id}` : `${opts.url}#${id}`;
-        const useEl = use.cloneNode();
+        const useEl = use.cloneNode() as SVGUseElement;
 
         useEl.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
+        useEl.setAttribute('href', href);
         el.replaceChild(useEl, el.childNodes[0]);
       },
     };
 
-    Vue.directive('svg', dir);
+    vue.directive('svg', dir);
   },
 };

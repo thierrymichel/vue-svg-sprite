@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 > No changelog before 1.2.0 release… ¯\_(ツ)_/¯
 
+## [1.3.0] _(24/03/2019)_
+
+### Added
+
+- :sparkles: TypeScript support
+- :ok_hand: Add `href` attribute (`xlink:href` deprecated)
+
 ## [1.2.2] _(03/02/2018)_
 
 ### Fixed

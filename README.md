@@ -15,14 +15,14 @@ This Vue.js plugin will add some attributes (`viewBox`, `width` and `height`) an
 * Use an external SVG file
 * Use `expression` or `symbol` attribute to link the correct `<symbol>`
 * Use `size` attribute for `viewBox`, `width` and `height` (`<svg>`)
-    - Comma or space separated values
-    - 1, 2 or 4 values accepted
-    - 1 value: x/y = 0, width = height (e.g.: 24)
-    - 2 values: x/y = 0, width, height (e.g.: 24 24)
-    - 4 values: x, y, width, height (e.g.: 0 0 24 24)
+  - Comma or space separated values
+  - 1, 2 or 4 values accepted
+  - 1 value: x/y = 0, width = height (e.g.: 24)
+  - 2 values: x/y = 0, width, height (e.g.: 24 24)
+  - 4 values: x, y, width, height (e.g.: 0 0 24 24)
 * Options:
-    - `url`: path to external SVG file (default: `/assets/svg/sprite.svg`)
-    - `class`: class for the SVG element (default: `icon`)
+  - `url`: path to external SVG file (default: `/assets/svg/sprite.svg`)
+  - `class`: class for the SVG element (default: `icon`)
 
 NB: If the className is already used (eg: via a modifier like `icon--inline`), the class option is not added…
 
@@ -36,9 +36,11 @@ Vue.use(SvgSprite);
 ```
 
 ### Nuxt
+
 If you are using this plugin with [Nuxt](https://nuxtjs.org/) make sure you import as a plugin without SSR since `document.createElementNS` does not exist.
+
 ```js
-plugins: [ 
+plugins: [
   { src: '~/plugins/svg-sprite.js', ssr: false }
 ]
 ```

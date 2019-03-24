@@ -1,7 +1,9 @@
 ### Custom ###
 /src
 /test
-/.babelrc
 /.editorconfig
-/.eslintrc.json
+/.eslintrc.js
 /.travis.yml
+/prettier.config.js
+/tsconfig.json
+/tslint.json
