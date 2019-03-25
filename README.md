@@ -8,11 +8,11 @@
 
 This version (1.x.x) is compatible with Vue.js 2.0 (thanks to [@lovethebomb](https://github.com/lovethebomb))
 
-## Draft (wip)
+## Description
 
 This Vue.js plugin will add some attributes (`viewBox`, `width` and `height`) and the appropriate `<use>` to `<svg>` elements.
 
-* Use an external SVG file
+* Use inline SVG spritesheet or an external SVG file
 * Use `expression` or `symbol` attribute to link the correct `<symbol>`
 * Use `size` attribute for `viewBox`, `width` and `height` (`<svg>`)
   - Comma or space separated values
@@ -21,7 +21,7 @@ This Vue.js plugin will add some attributes (`viewBox`, `width` and `height`) an
   - 2 values: x/y = 0, width, height (e.g.: 24 24)
   - 4 values: x, y, width, height (e.g.: 0 0 24 24)
 * Options:
-  - `url`: path to external SVG file (default: `/assets/svg/sprite.svg`)
+  - `url`: path to external SVG file (default: `/assets/svg/sprite.svg`, use `''` for inline)
   - `class`: class for the SVG element (default: `icon`)
 
 NB: If the className is already used (eg: via a modifier like `icon--inline`), the class option is not added…
