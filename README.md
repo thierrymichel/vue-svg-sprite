@@ -95,6 +95,9 @@ Vue.use(SvgSprite, {
 
 [@lovethebomb](https://github.com/lovethebomb)
 [@eregnier](https://github.com/eregnier)
+[@jpsc](https://github.com/jpsc)
+[@valjar](https://github.com/valjar)
+[@demiro](https://github.com/demiro)
 
 ## License
 
