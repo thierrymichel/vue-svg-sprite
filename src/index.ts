@@ -70,11 +70,22 @@ export default {
         // NOTE: guess it's only when expression is used…
         const id = binding.value || vnode.data.attrs.symbol;
         const href = opts.url === '' ? `#${id}` : `${opts.url}#${id}`;
+
+        if (
+          el
+          && el.childNodes
+          && el.childNodes[0]
+          && (el.childNodes[0] as Element).getAttribute('href') === href
+        ) {
+          return false;
+        }
+
         const useEl = use.cloneNode() as SVGUseElement;
 
         useEl.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
         useEl.setAttribute('href', href);
         el.replaceChild(useEl, el.childNodes[0]);
+        return true;
       },
     };
 
