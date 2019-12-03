@@ -145,7 +145,7 @@ test('add invalid size attribute, 3 values', () => {
   const svg = vm.$el.querySelector('svg');
   const size = svg.getAttribute('size');
 
-  expect(size).toBe('6 12 42');
+  expect(size).toBeNull();
 });
 
 test('add invalid size attribute, 5 values', () => {
@@ -163,7 +163,7 @@ test('add invalid size attribute, 5 values', () => {
   const svg = vm.$el.querySelector('svg');
   const size = svg.getAttribute('size');
 
-  expect(size).toBe('3 6 12 24 42');
+  expect(size).toBeNull();
 });
 
 test('add default class', () => {
