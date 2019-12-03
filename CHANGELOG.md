@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 > No changelog before 1.2.0 release… ¯\_(ツ)_/¯
 
+## [1.4.0] _(03/12/2019)_
+
+### Added
+
+- :sparkles: add SSR support
+
+### Fixed
+
+- :ok_hand: avoid <use> "refresh and reload" on update
+
 ## [1.3.1] _(03/12/2019)_
 
 ### Security
