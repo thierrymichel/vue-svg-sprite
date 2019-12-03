@@ -35,7 +35,26 @@ import SvgSprite from 'vue-svg-sprite';
 Vue.use(SvgSprite);
 ```
 
-### Nuxt
+### SSR
+
+If you are using this plugin with [vue-server-renderer](https://ssr.vuejs.org/api/#renderer-options) (directly or under the hood: [NuxtJS](https://fr.nuxtjs.org/), [Vapper](https://vapperjs.org/), …), server needs to render the directive specifically:
+
+```js
+// Some config file…
+const SvgSprite = require('vue-svg-sprite')
+
+module.exports = {
+  rendererOptions: {
+    directives: {
+      svg(vnode, directiveMeta) {
+        SvgSprite.ssr(vnode, directiveMeta)
+      },
+    },
+  },
+}
+```
+
+#### Nuxt (probably deprecated…)
 
 If you are using this plugin with [Nuxt](https://nuxtjs.org/) make sure you import as a plugin without SSR since `document.createElementNS` does not exist.
 
@@ -98,6 +117,7 @@ Vue.use(SvgSprite, {
 [@jpsc](https://github.com/jpsc)
 [@valjar](https://github.com/valjar)
 [@demiro](https://github.com/demiro)
+[@Warin](https://github.com/Warin)
 
 ## License
 
