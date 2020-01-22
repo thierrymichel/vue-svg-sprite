@@ -92,13 +92,19 @@ export default {
           el.setAttribute('class', classes ? `${classes} ${self.options.class}` : self.options.class);
         }
 
-        // Add the <use> element to <svg>
-        const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-        const href = self.getHref(id);
+        // <use> has already been added server-side?
+        const hasUseNode = el && el.querySelector('use') !== null;
 
-        use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
-        use.setAttribute('href', href);
-        el.appendChild(use);
+        /* istanbul ignore else */
+        if (!hasUseNode) {
+          // Add the <use> element to <svg>
+          const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+          const href = self.getHref(id);
+
+          use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href);
+          use.setAttribute('href', href);
+          el.appendChild(use);
+        }
       },
       update(el, binding, vnode) {
         // NOTE: guess it's only when expression is used…
