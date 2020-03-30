@@ -50,7 +50,7 @@
     "jest": "^24.9.0",
     "microbundle": "^0.11.0",
     "rimraf": "^3.0.0",
-    "ts-jest": "^24.2.0",
+    "ts-jest": "^25.1.0",
     "tslint": "^5.20.1",
     "typescript": "^3.7.2",
     "typescript-tslint-plugin": "^0.5.5",
