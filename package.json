@@ -48,7 +48,7 @@
     "coveralls": "^3.0.9",
     "eslint": "^6.7.2",
     "jest": "^24.9.0",
-    "microbundle": "^0.11.0",
+    "microbundle": "^0.12.0",
     "rimraf": "^3.0.0",
     "ts-jest": "^25.1.0",
     "tslint": "^5.20.1",
