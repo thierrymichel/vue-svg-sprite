@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "microbundle --name SvgSprite",
+    "build": "microbundle --no-sourcemap --name SvgSprite",
     "build:watch": "microbundle watch --name SvgSprite",
     "build:old": "babel src --out-dir lib",
     "clean": "rimraf dist",
