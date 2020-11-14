@@ -1,9 +1,0 @@
-### Custom ###
-/src
-/test
-/.editorconfig
-/.eslintrc.js
-/.travis.yml
-/prettier.config.js
-/tsconfig.json
-/tslint.json
