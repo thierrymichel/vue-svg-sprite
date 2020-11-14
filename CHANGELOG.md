@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 > No changelog before 1.2.0 release… ¯\_(ツ)_/¯
 
+## [1.4.3] _(14/11/2020)_
+
+### Fixed
+
+- :bug: allow size to be a number
+
+## [1.4.2] _(03/06/2020)_
+
+### Fixed
+
+- :wrench: remove sourcemaps on build
+
+### Changed
+
+- :arrow_up: upgrade dependencies
+
+## [1.4.1] _(22/01/2020)_
+
+### Fixed
+
+- :bug: fix double <use> with server-side rendering
+
 ## [1.4.0] _(03/12/2019)_
 
 ### Added
