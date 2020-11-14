@@ -131,14 +131,14 @@ export default {
 
     vue.directive('svg', dir);
   },
-  getAttributes(size: string) {
+  getAttributes(size: string | number) {
     if (!size) {
       return null;
     }
 
     // Set viewBox, widht, height attributes ?
     // Normalize valid separators: / /, /,/
-    const sizeValues = size.replace(/( |, |,)/g, ' ').split(' ');
+    const sizeValues = size.toString().replace(/( |, |,)/g, ' ').split(' ');
     const l = sizeValues.length;
 
     if (l === 3 || l > 4) {

@@ -86,6 +86,28 @@ test('add size attribute, 1 value', () => {
   expect(height).toBe('42');
 });
 
+test('add size attribute, 1 number', () => {
+  const vm = new Vue({
+    render(h) {
+      return h('div',
+        [h('svg', {
+          attrs: { size: 42 },
+          directives: [{ name: 'svg', value: 'icon2' }],
+        })]
+      );
+    }
+  }).$mount();
+
+  const svg = vm.$el.querySelector('svg');
+  const viewBox = svg.getAttribute('viewBox');
+  const width = svg.getAttribute('width');
+  const height = svg.getAttribute('height');
+
+  expect(viewBox).toBe('0 0 42 42');
+  expect(width).toBe('42');
+  expect(height).toBe('42');
+});
+
 test('add size attribute, 2 values', () => {
   const vm = new Vue({
     render(h) {
