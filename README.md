@@ -118,6 +118,7 @@ Vue.use(SvgSprite, {
 [@valjar](https://github.com/valjar)
 [@demiro](https://github.com/demiro)
 [@Warin](https://github.com/Warin)
+[@Warcot](https://github.com/Warcot)
 
 ## License
 
