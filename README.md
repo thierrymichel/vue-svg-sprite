@@ -1,8 +1,8 @@
 # vue-svg-sprite
 
 ![stable](https://img.shields.io/badge/stability-stable-green.svg?style=flat-square)
-[![NPM version](https://img.shields.io/npm/v/vue-svg-sprite.svg?style=flat-square)](https://www.npmjs.com/package/vue-svg-sprite)
-[![Coverage Status](https://img.shields.io/coveralls/thierrymichel/vue-svg-sprite/master.svg?style=flat-square)](https://coveralls.io/github/thierrymichel/vue-svg-sprite?branch=master)
+[![NPM version](https://img.shields.io/npm/v/vue-svg-sprite.svg?style=flat-square)](https://www.npmjs.com/package/vue-svg-sprite/v/1.4.3)
+[![Coverage Status](https://img.shields.io/coveralls/thierrymichel/vue-svg-sprite/master.svg?style=flat-square)](https://coveralls.io/github/thierrymichel/vue-svg-sprite?branch=v1.4.3)
 
 > Vue.js directive to simply use SVG sprite
 
@@ -107,8 +107,6 @@ Vue.use(SvgSprite, {
 > To generate the SVG sprite file, you can use [gulp-svgstore](https://github.com/w0rm/gulp-svgstore) or [grunt-svgstore](https://github.com/FWeinb/grunt-svgstore).
 
 -----
-
-[![NPM](https://nodei.co/npm/vue-svg-sprite.png)](https://www.npmjs.com/package/vue-svg-sprite) [![Greenkeeper badge](https://badges.greenkeeper.io/thierrymichel/vue-svg-sprite.svg)](https://greenkeeper.io/)
 
 ## Contributors
 
