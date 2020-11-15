@@ -1,3 +1,12 @@
+# CHANGELOG
+
+## [2.0.3](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.0.2...v2.0.3) (2020-11-15)
+
+
+### Bug Fixes
+
+* :green_heart: update changelog ([5f71a7b](https://github.com/thierrymichel/vue-svg-sprite/commit/5f71a7b94a9a06e0a9548c715982d21921884609))
+
 ## [2.0.2](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.0.1...v2.0.2) (2020-11-15)
 
 ### Bug Fixes
