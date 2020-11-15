@@ -3,6 +3,7 @@
   "fenced-code-language": false,
   "first-line-h1": false,
   "line-length": false,
+  "no-duplicate-heading": false,
   "no-inline-html": false,
   "no-trailing-punctuation": {
     "punctuation": ",;:"

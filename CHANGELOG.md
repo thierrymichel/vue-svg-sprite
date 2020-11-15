@@ -1,19 +1,34 @@
 ## [2.0.2](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.0.1...v2.0.2) (2020-11-15)
 
+### Bug Fixes
+
+- :green_heart: add changelog + missing deps ([fae4d60](https://github.com/thierrymichel/vue-svg-sprite/commit/fae4d60b216dd2269b5b0ff93dc3057714462534))
+- :green_heart: add git release ([8943caa](https://github.com/thierrymichel/vue-svg-sprite/commit/8943caaed1d0df67b1a61e5a8accd93d101bd4c9))
+
+## [2.0.1](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.0.0...v2.0.1) (2020-11-15)
 
 ### Bug Fixes
 
-* :green_heart: add changelog + missing deps ([fae4d60](https://github.com/thierrymichel/vue-svg-sprite/commit/fae4d60b216dd2269b5b0ff93dc3057714462534))
-* :green_heart: add git release ([8943caa](https://github.com/thierrymichel/vue-svg-sprite/commit/8943caaed1d0df67b1a61e5a8accd93d101bd4c9))
+- :wrench: remove unused scripts ([f789e31](https://github.com/thierrymichel/vue-svg-sprite/commit/f789e31e89b57296c3ec307ff67670a9d94d6fdc))
 
-# Changelog
+## [2.0.0](https://github.com/thierrymichel/vue-svg-sprite/compare/v1.4.3...v2.0.0) (2020-11-15)
+
+### New Feature
+
+- :sparkles: Vue.js v3 + component ([1838479](https://github.com/thierrymichel/vue-svg-sprite/commit/1838479e9c97f64f17b971b42fa6f7dd4c2320ca))
+
+---
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+The format is based on [release-notes-generator](https://github.com/semantic-release/release-notes-generator) with [conventional commits](https://github.com/conventional-changelog/conventional-changelog).<br>
+This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-> No changelog before 1.2.0 release… ¯\_(ツ)_/¯
+---
+
+# Previous versions
+
+> No changelog before 1.2.0 release… ¯\_(ツ)\_/¯
 
 ## [1.4.3] _(14/11/2020)_
 
