@@ -45,9 +45,6 @@
     "coverage": "cat ./coverage/lcov.info | coveralls",
     "lint": "eslint src/**/*.ts",
     "precommit": "lint-staged",
-    "prerelease": "yarn build",
-    "publish": "git push --follow-tags && npm publish",
-    "release": "yarn test && standard-version",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "semantic-release": "semantic-release"
