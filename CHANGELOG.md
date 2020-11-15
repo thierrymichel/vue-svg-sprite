@@ -1,3 +1,11 @@
+## [2.0.2](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.0.1...v2.0.2) (2020-11-15)
+
+
+### Bug Fixes
+
+* :green_heart: add changelog + missing deps ([fae4d60](https://github.com/thierrymichel/vue-svg-sprite/commit/fae4d60b216dd2269b5b0ff93dc3057714462534))
+* :green_heart: add git release ([8943caa](https://github.com/thierrymichel/vue-svg-sprite/commit/8943caaed1d0df67b1a61e5a8accd93d101bd4c9))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
