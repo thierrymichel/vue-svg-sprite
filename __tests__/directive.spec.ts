@@ -223,6 +223,18 @@ test('keep attribute', () => {
   expect(svg.attributes('role')).toBe('presentation')
 })
 
+test('no props, no error', () => {
+  global.console.warn = jest.fn()
+  const { svg } = getWrapper({}, undefined, {
+    template: `<div>
+  <svg v-svg="'${symbol}'"></svg>
+  </div>`,
+  })
+
+  expect(svg.exists()).toBeTruthy()
+  expect(global.console.warn).not.toHaveBeenCalled()
+})
+
 test('update use href with symbol property', async () => {
   const { use, wrapper } = getWrapper()
   const newSymbol = 'icon2'

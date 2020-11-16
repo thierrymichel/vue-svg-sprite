@@ -10,7 +10,7 @@ export const svgSpriteDirective: Directive = {
     // Get params
     // If expression + "symbol" param -> use expression value
     const id: string = binding.value || vnode.props!.symbol
-    const { size, url } = vnode.props as { size: string; url: string }
+    const { size, url } = (vnode.props || {}) as { size: string; url: string }
 
     // SVG attributes
     const attrs = getAttributes(size)
@@ -22,6 +22,7 @@ export const svgSpriteDirective: Directive = {
     // Remove directive attributes
     id && el.removeAttribute('symbol')
     size && el.removeAttribute('size')
+    url && el.removeAttribute('url')
 
     // SVG optional CSS class
     // IE do not support classList on SVG element, so we use getAttribute…
