@@ -1,4 +1,4 @@
-import { App, Directive } from 'vue'
+import { App, Directive, h, render, VNodeArrayChildren } from 'vue'
 import { SvgSpriteOptions, SvgSpritePluginOptions } from './defs'
 import { checkClass, defaultOptions, getAttributes, getHref } from './utils'
 
@@ -36,23 +36,37 @@ export const svgSpriteDirective: Directive = {
       )
     }
 
+    const children: VNodeArrayChildren = []
     // <use> has already been added server-side?
     const hasUseNode = el && el.querySelector('use') !== null
 
     /* istanbul ignore else */
     if (!hasUseNode) {
       // Add the <use> element to <svg>
-      const use = document.createElementNS('http://www.w3.org/2000/svg', 'use')
       const href = getHref(id, {
         ...options,
         // Override with "local" value without modifying the global one
         url: url === undefined ? options.url : url,
       })
+      const use = h('use', {
+        'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+        // eslint-disable-next-line quote-props
+        href,
+        'xlink-href': href,
+      })
 
-      use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href)
-      use.setAttribute('href', href)
-      el.appendChild(use)
+      children.push(use)
     }
+
+    // Render full SVG (no more document.createElement)
+    const svg = h(
+      'svg',
+      {
+        class: classes ? `${classes} ${options.class}` : options.class,
+      },
+      children
+    )
+    render(svg, el)
   },
   updated(el, binding, vnode) {
     // NOTE: guess it's only when expression is used…
@@ -73,71 +87,19 @@ export const svgSpriteDirective: Directive = {
         return
       }
 
-      const use = document.createElementNS('http://www.w3.org/2000/svg', 'use')
-      use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href)
-      use.setAttribute('href', href)
-
-      el.replaceChild(use, useNode)
+      useNode.setAttribute('href', href)
+      useNode.setAttribute('xlink-href', href)
     }
   },
   /* istanbul ignore next */
   // Do not know who is usign this (and how)
-  // at th emoment…
+  // at the moment…
   // getSSRProps(binding, vnode) {
   //   const { symbol: id, size } = vnode.props
   // },
 }
 
 export const svgSpriteDirectivePlugin = {
-  // TODO: make SSR work again…
-  // No more VNodeDirective neither vnode…data, createElement
-  // ssr /* istanbul ignore next */(vnode: VNode, directiveMeta: VNodeDirective) {
-  //   // Get params
-  //   const { data } = vnode
-  //   const { symbol: id, size } = data.attrs
-
-  //   // SVG attributes
-  //   const attrs = getAttributes(size)
-
-  //   if (attrs) {
-  //     data.attrs = {
-  //       ...data.attrs,
-  //       ...attrs,
-  //     }
-  //   }
-
-  //   // Remove directive attributes
-  //   size && delete data.attrs.size
-  //   id && delete data.attrs.symbol
-
-  //   // SVG optional CSS class
-  //   // We need to "concatenate" dynamic (object)
-  //   // and static (space searated string) data
-  //   const { class: dynamicClass, staticClass } = data
-  //   let classes = staticClass || ''
-  //   classes += dynamicClass ? Object.keys(dynamicClass).join(' ') : ''
-
-  //   const hasClass = checkClass(classes)
-
-  //   if (!hasClass) {
-  //     data.staticClass = data.staticClass
-  //       ? `${data.staticClass} ${options.class}`
-  //       : options.class
-  //   }
-
-  //   // Add the <use> element to <svg>
-  //   const use = vnode.context.$createElement('use', {
-  //     attrs: {
-  //       href: getHref(id, options),
-  //     },
-  //   })
-
-  //   if (Array.isArray(vnode.children)) {
-  //     vnode.children.push(use)
-  //   } else {
-  //     vnode.children = [use]
-  //   }
-  // },
   install(app: App, opts: SvgSpritePluginOptions = {}) {
     // Update options
     options.class = opts.class === undefined ? defaultOptions.class : opts.class

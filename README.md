@@ -28,7 +28,7 @@ It's also TypeScript friendly :)
 ### Overall usage
 
 - Use inline SVG spritesheet or an external SVG file
-- Use `symbol` attribute (or directive expression) to use the correct `<symbol>`
+- Use `symbol` attribute (or directive expression) to get the right `<symbol>`
 - Use `size` attribute for `viewBox`, `width` and `height` (`<svg>`)
   - Comma or space separated values
   - 1, 2 or 4 values accepted
@@ -81,10 +81,6 @@ import { svgSpriteDirectivePlugin } from 'vue-svg-sprite'
 
 Vue.use(svgSpriteDirectivePlugin, {} /* options */)
 ```
-
-#### SSR
-
-> TBD (but prefer component…)
 
 ### Options
 
