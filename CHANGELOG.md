@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [2.0.5](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.0.4...v2.0.5) (2020-11-16)
+
+
+### Bug Fixes
+
+* :bug: refactor default options ([4a3f275](https://github.com/thierrymichel/vue-svg-sprite/commit/4a3f275aa8dbffb691f2b3a459fd31e3d09cabee))
+
 ## [2.0.4](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.0.3...v2.0.4) (2020-11-16)
 
 
