@@ -46,6 +46,7 @@ const getWrapper = (
   opts?: SvgSpriteOptions,
   cpt: ComponentOptionsWithoutProps = SvgComponent
 ) => {
+  const options = opts ? { ...opts } : undefined
   const wrapper = mount(cpt, {
     data() {
       return {
@@ -53,7 +54,7 @@ const getWrapper = (
       }
     },
     global: {
-      plugins: [[svgSpriteDirectivePlugin, opts]],
+      plugins: [[svgSpriteDirectivePlugin, options]],
     },
   })
   const svg = wrapper.find('svg')

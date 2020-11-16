@@ -1,8 +1,10 @@
 import { App, Directive } from 'vue'
 import { SvgSpriteOptions, SvgSpritePluginOptions } from './defs'
-import { checkClass, getAttributes, getHref } from './utils'
+import { checkClass, defaultOptions, getAttributes, getHref } from './utils'
 
-const options: SvgSpriteOptions = {} as SvgSpriteOptions
+const options: SvgSpriteOptions = {
+  ...defaultOptions,
+}
 export const svgSpriteDirective: Directive = {
   beforeMount(el, binding, vnode) {
     // Get params
@@ -136,9 +138,9 @@ export const svgSpriteDirectivePlugin = {
   //   }
   // },
   install(app: App, opts: SvgSpritePluginOptions = {}) {
-    // Get options
-    options.class = opts.class || 'icon'
-    options.url = opts.url === undefined ? '/assets/svg/sprite.svg' : opts.url
+    // Update options
+    options.class = opts.class === undefined ? defaultOptions.class : opts.class
+    options.url = opts.url === undefined ? defaultOptions.url : opts.url
 
     app.directive('svg', svgSpriteDirective)
   },

@@ -1,5 +1,9 @@
 import { SvgSpriteAttrs, SvgSpriteOptions } from './defs'
 
+export const defaultOptions: SvgSpriteOptions = {
+  class: 'icon',
+  url: '/assets/svg/sprite.svg',
+}
 export const getHref = (id: string, options: SvgSpriteOptions) =>
   options.url === '' ? `#${id}` : `${options.url}#${id}`
 

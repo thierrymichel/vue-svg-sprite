@@ -1,9 +1,11 @@
 import { App, computed, defineComponent, h } from 'vue'
 import { SvgSpriteOptions, SvgSpritePluginOptions } from './defs'
-import { getAttributes, getHref } from './utils'
+import { defaultOptions, getAttributes, getHref } from './utils'
 
 const name = 'SvgSprite'
-const options: SvgSpriteOptions = {} as SvgSpriteOptions
+const options: SvgSpriteOptions = {
+  ...defaultOptions,
+}
 export const SvgSprite = defineComponent({
   name,
   props: {
@@ -59,9 +61,9 @@ export const SvgSprite = defineComponent({
 
 export const svgSpritePlugin = {
   install(app: App, opts: SvgSpritePluginOptions = {}) {
-    // Get options
-    options.class = opts.class || 'icon'
-    options.url = opts.url === undefined ? '/assets/svg/sprite.svg' : opts.url
+    // Update options
+    options.class = opts.class === undefined ? defaultOptions.class : opts.class
+    options.url = opts.url === undefined ? defaultOptions.url : opts.url
 
     app.component(name, SvgSprite)
   },
