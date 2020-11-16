@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [2.0.4](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.0.3...v2.0.4) (2020-11-16)
+
+
+### Bug Fixes
+
+* :recycle: use render function ([6543e3d](https://github.com/thierrymichel/vue-svg-sprite/commit/6543e3d1a731c8dfef10f7cdf2718edbd18f8f5d))
+
 ## [2.0.3](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.0.2...v2.0.3) (2020-11-15)
 
 
