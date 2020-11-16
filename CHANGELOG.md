@@ -1,5 +1,12 @@
 # CHANGELOG
 
+# [2.2.0](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.1.1...v2.2.0) (2020-11-16)
+
+
+### Features
+
+* :zap: mark module as tree shakable ([c5aa722](https://github.com/thierrymichel/vue-svg-sprite/commit/c5aa7220ef4c1826677f26e054d7602292e75b36))
+
 ## [2.1.1](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.1.0...v2.1.1) (2020-11-16)
 
 
