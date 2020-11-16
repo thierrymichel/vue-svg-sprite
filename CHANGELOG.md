@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [2.0.6](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.0.5...v2.0.6) (2020-11-16)
+
+
+### Bug Fixes
+
+* :bug: fix directive without any prop ([46da8d1](https://github.com/thierrymichel/vue-svg-sprite/commit/46da8d194f93848725dadfd2f2d26df2ddc080c4))
+
 ## [2.0.5](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.0.4...v2.0.5) (2020-11-16)
 
 
