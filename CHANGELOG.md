@@ -1,5 +1,12 @@
 # CHANGELOG
 
+# [2.1.0](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.0.6...v2.1.0) (2020-11-16)
+
+
+### Features
+
+* :recycle: SSR friendly ([ebe2d50](https://github.com/thierrymichel/vue-svg-sprite/commit/ebe2d50e4a81b123a88e6055631e6876c6f0ce22))
+
 ## [2.0.6](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.0.5...v2.0.6) (2020-11-16)
 
 
