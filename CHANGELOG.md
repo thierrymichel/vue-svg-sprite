@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [2.1.1](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.1.0...v2.1.1) (2020-11-16)
+
+
+### Bug Fixes
+
+* :bug: keep url attribute for directive ([41f8923](https://github.com/thierrymichel/vue-svg-sprite/commit/41f89230f18ea4fb8b7f2c60cbd826e503d12614))
+
 # [2.1.0](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.0.6...v2.1.0) (2020-11-16)
 
 
