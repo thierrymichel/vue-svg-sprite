@@ -1,4 +1,4 @@
-import { App, defineComponent, computed } from 'vue'
+import { App, computed, defineComponent, h } from 'vue'
 import { SvgSpriteOptions, SvgSpritePluginOptions } from './defs'
 import { getAttributes, getHref } from './utils'
 
@@ -6,19 +6,6 @@ const name = 'SvgSprite'
 const options: SvgSpriteOptions = {} as SvgSpriteOptions
 export const SvgSprite = defineComponent({
   name,
-  template: `
-  <svg
-    :class="cssClass"
-    :viewBox="attrs.viewBox"
-    :width="attrs.width"
-    :height="attrs.height"
-    role="presentation"
-  >
-    <use xmlns:xlink="http://www.w3.org/1999/xlink"
-      :xlink:href="href"
-      :href="href"
-    ></use>
-  </svg>`,
   props: {
     symbol: {
       type: String,
@@ -50,11 +37,23 @@ export const SvgSprite = defineComponent({
     // SVG attributes
     const attrs = computed(() => getAttributes(props.size))
 
-    return {
-      cssClass: options.class,
-      href,
-      attrs,
-    }
+    return () =>
+      h(
+        'svg',
+        {
+          role: 'presentation',
+          class: options.class,
+          width: attrs.value.width,
+          height: attrs.value.height,
+          viewBox: attrs.value.viewBox,
+        },
+        h('use', {
+          'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+          // eslint-disable-next-line quote-props
+          href: href.value,
+          'xlink-href': href.value,
+        })
+      )
   },
 })
 
