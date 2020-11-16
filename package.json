@@ -9,6 +9,7 @@
   "module": "dist/vue-svg-sprite.mjs",
   "source": "src/index.ts",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "mangle": {
     "regex": "^_"
   },

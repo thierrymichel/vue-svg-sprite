@@ -23,6 +23,8 @@ This module is tree-shakable and exports the followings:
 - `svgSpriteDirective`, the directive version
 - `svgSpriteDirectivePlugin`, options and global registration for directive
 
+> 820B gzipped for the component plugin…
+
 It's also TypeScript friendly :)
 
 ### Overall usage
