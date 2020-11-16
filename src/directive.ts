@@ -22,7 +22,6 @@ export const svgSpriteDirective: Directive = {
     // Remove directive attributes
     id && el.removeAttribute('symbol')
     size && el.removeAttribute('size')
-    url && el.removeAttribute('url')
 
     // SVG optional CSS class
     // IE do not support classList on SVG element, so we use getAttribute…
@@ -71,7 +70,7 @@ export const svgSpriteDirective: Directive = {
   updated(el, binding, vnode) {
     // NOTE: guess it's only when expression is used…
     const id = binding.value || vnode.props!.symbol
-    const { url } = vnode.props as { url: string }
+    const { url } = (vnode.props || {}) as { url: string }
     const href = getHref(id, {
       ...options,
       // Override with "local" value without modifying the global one

@@ -239,10 +239,36 @@ test('update use href with symbol property', async () => {
   const { use, wrapper } = getWrapper()
   const newSymbol = 'icon2'
 
-  // expect(use.exists()).toBeTruthy()
-  // expect(use.attributes('href')).toBe(`${defaultUrl}#${symbol}`)
+  expect(use.exists()).toBeTruthy()
+  expect(use.attributes('href')).toBe(`${defaultUrl}#${symbol}`)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ;(wrapper.vm as any).symbol = newSymbol
+
+  await nextTick()
+
+  const updatedUse = wrapper.find('use')
+
+  expect(updatedUse.exists()).toBeTruthy()
+  expect(updatedUse.attributes('href')).toBe(`${defaultUrl}#${newSymbol}`)
+})
+
+test('update use href with no props', async () => {
+  const newSymbol = 'icon2'
+  const { use, wrapper } = getWrapper({}, undefined, {
+    template: `<div>
+  <svg v-svg="directive"></svg>
+  </div>`,
+    data() {
+      return {
+        directive: symbol,
+      }
+    },
+  })
+
+  expect(use.exists()).toBeTruthy()
+  expect(use.attributes('href')).toBe(`${defaultUrl}#${symbol}`)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ;(wrapper.vm as any).directive = newSymbol
 
   await nextTick()
 
