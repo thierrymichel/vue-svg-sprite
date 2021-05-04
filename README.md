@@ -99,6 +99,7 @@ Vue.use(svgSpritePlugin, {
 ```
 
 > If you want to use an inline SVG, set `url` to `''`.
+> If you use vue-cli, set `url` to `require('./assets/svg/sprite.svg')`.
 
 ---
 
