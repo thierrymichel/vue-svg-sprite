@@ -171,6 +171,7 @@ Vue.use(svgSpritePlugin, {
 [@demiro](https://github.com/demiro)
 [@Warin](https://github.com/Warin)
 [@Warcot](https://github.com/Warcot)
+[@zavsievich](https://github.com/zavsievich)
 
 ## License
 
