@@ -99,6 +99,7 @@ Vue.use(svgSpritePlugin, {
 ```
 
 > If you want to use an inline SVG, set `url` to `''`.
+> If your spritesheet is "processed" (vue-cli, webpack, …) set `url` to `require('./processed/path/to/svg/sprite.svg')`.
 
 ---
 
@@ -170,6 +171,7 @@ Vue.use(svgSpritePlugin, {
 [@demiro](https://github.com/demiro)
 [@Warin](https://github.com/Warin)
 [@Warcot](https://github.com/Warcot)
+[@zavsievich](https://github.com/zavsievich)
 
 ## License
 
