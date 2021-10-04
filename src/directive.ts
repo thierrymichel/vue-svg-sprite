@@ -35,7 +35,8 @@ export const svgSpriteDirective: Directive = {
       )
     }
 
-    const children: VNodeArrayChildren = []
+    // REVIEW: see below
+    // const children: VNodeArrayChildren = []
     // <use> has already been added server-side?
     const hasUseNode = el && el.querySelector('use') !== null
 
@@ -47,25 +48,34 @@ export const svgSpriteDirective: Directive = {
         // Override with "local" value without modifying the global one
         url: url === undefined ? options.url : url,
       })
-      const use = h('use', {
-        'xmlns:xlink': 'http://www.w3.org/1999/xlink',
-        // eslint-disable-next-line quote-props
-        href,
-        'xlink-href': href,
-      })
+      // REVIEW: see below
+      // const use = h('use', {
+      //   'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+      //   // eslint-disable-next-line quote-props
+      //   href,
+      //   'xlink-href': href,
+      // })
+      const use = document.createElementNS('http://www.w3.org/2000/svg', 'use')
+      // REVIEW: see below
+      // children.push(use)
 
-      children.push(use)
+      use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', href)
+      use.setAttribute('href', href)
+      el.appendChild(use)
     }
 
     // Render full SVG (no more document.createElement)
-    const svg = h(
-      'svg',
-      {
-        class: classes ? `${classes} ${options.class}` : options.class,
-      },
-      children
-    )
-    render(svg, el)
+    // Not working because `render(svg, el)` append an `svg` element inside `original `svg`
+    // and `render(use, el)` do not render
+    // so we switch back to an old school `createElementNS`
+    // const svg = h(
+    //   'svg',
+    //   {
+    //     class: classes ? `${classes} ${options.class}` : options.class,
+    //   },
+    //   children
+    // )
+    // render(svg, el)
   },
   updated(el, binding, vnode) {
     // NOTE: guess it's only when expression is used…
