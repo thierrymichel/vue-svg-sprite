@@ -1,6 +1,6 @@
 {
   "name": "vue-svg-sprite",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Vue.js plugin, component and directive to simply use SVG sprite",
   "main": "dist/vue-svg-sprite.js",
   "umd:main": "dist/vue-svg-sprite.umd.js",

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [2.2.1](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.2.0...v2.2.1) (2021-10-04)
+
+
+### Bug Fixes
+
+* :bug: fix double SVG element with directive ([59125f2](https://github.com/thierrymichel/vue-svg-sprite/commit/59125f28c3d058ddf18a511a55215be860768f09))
+
 # [2.2.0](https://github.com/thierrymichel/vue-svg-sprite/compare/v2.1.1...v2.2.0) (2020-11-16)
 
 
